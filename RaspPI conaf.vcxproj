@@ -22,13 +22,13 @@
     <ClCompile Include="res\cJSON.c" />
     <ClCompile Include="src\jsonParser.c" />
     <ClCompile Include="src\main.c" />
-    <ClCompile Include="src\websocket.c" />
+    <ClCompile Include="src\object.c" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="res\cJSON.h" />
     <ClInclude Include="src\jsonParser.h" />
     <ClInclude Include="src\main.h" />
-    <ClInclude Include="src\websocket.h" />
+    <ClInclude Include="src\object.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="src\json.json" />
@@ -113,12 +113,12 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
-      <WarningLevel>Level3</WarningLevel>
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <AdditionalIncludeDirectories>C:\Users\mihne\source\repos\RaspPI conaf\res\paho.mqtt.c\build\mqttpaho-c\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <LanguageStandard_C>stdc17</LanguageStandard_C>
+      <WarningLevel>Level3</WarningLevel>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>

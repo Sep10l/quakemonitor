@@ -1,30 +1,22 @@
-#pragma once
+#ifndef MAIN_H
+#define MAIN_H
+
+#define _WINSOCK_DEPRECATED_NO_WARNINGS
+
 #include <stdbool.h>
 #include "jsonParser.h"
 #include <winsock2.h>
+#include "MQTTClient.h"
+#include "object.h"
 
 typedef int socklen_t;
+const char* localhost = "127.0.0.1";
 
-typedef struct {
-	JsonData data;
-	MQTTClient MQTTClient;
-} Object;
 
 typedef struct {
 	const char* serverURI;
 	const char* clientID;
 } MQTTInitOptions;
-
-typedef struct {
-	char* data;
-	int size;
-} Buffer;
-
-typedef struct {
-	unsigned char* data;
-	int size;
-} uBuffer;
-
 
 JsonData* checkValidJSON(JsonData* jsondata);
 void create_object(Object* object, JsonData* jsondata);
@@ -34,6 +26,7 @@ void init_mqtt(Object* object, MQTTInitOptions* init_options, MQTTClient_connect
 void setup_openssl();
 
 void bind_socket(SOCKET* server_socket);
-uBuffer* allocate_ubuffer(int size);
 
 char* http_request(const char* host, const char* path);
+
+#endif

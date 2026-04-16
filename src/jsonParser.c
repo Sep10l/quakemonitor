@@ -1,9 +1,6 @@
 #include "jsonParser.h"
 #include <stdio.h>
-#include <stdlib.h>
 #include <string.h>
-
-#include "../res/cJSON.h"
 
 const char* GetDeviceID()
 {
@@ -70,6 +67,7 @@ void parse_json(const char* json_string, Object* object, cJSON* json)
 		cJSON_IsString(lastseen) && (lastseen->valuestring != NULL))
 	{
 		JsonData jsondata;
+		memset(&jsondata, 0, sizeof(jsondata));
 		jsondata.device_id = deviceid->valuestring;
 		jsondata.status = status->valuestring;
 		jsondata.uptime = uptime->valueint;

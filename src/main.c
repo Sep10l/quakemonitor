@@ -8,14 +8,12 @@
 
 #include "../res/cJSON.h"
 
-#include "MQTTClient.h"
 #include "websocket.h"
 
 #include <sys/types.h>
 
-//#include 
-
 #define ESC_KEY 27
+
 
 // For OpenSSL checking at the start of the program
 #ifdef _WIN32
@@ -149,8 +147,8 @@ void init_mqtt(Object* object, MQTTInitOptions* init_options, MQTTClient_connect
 	init_options->serverURI = "ssl://quakemonitor-ed51e1cb.a03.euc1.aws.hivemq.cloud:8883";
 	init_options->clientID = "cladire_001";
 
-	MQTTClient_create(&object->MQTTClient, init_options->serverURI, init_options->clientID, MQTTCLIENT_PERSISTENCE_NONE, NULL);
-	int i = MQTTClient_setCallbacks(object->MQTTClient, NULL, NULL, messageArrived, NULL);
+	MQTTClient_create(&object->Client, init_options->serverURI, init_options->clientID, MQTTCLIENT_PERSISTENCE_NONE, NULL);
+	int i = MQTTClient_setCallbacks(object->Client, NULL, NULL, messageArrived, NULL);
 	printf("\ncallback: %d \n", i); // 0 signals a successful connection
 
 	ssl_options->enableServerCertAuth = 0;
@@ -171,7 +169,7 @@ void init_mqtt(Object* object, MQTTInitOptions* init_options, MQTTClient_connect
 	connect_options->password = "Admin1122";
 	connect_options->MQTTVersion = MQTTVERSION_3_1_1;
 
-	int j = MQTTClient_connect(object->MQTTClient, &connect_options);
+	int j = MQTTClient_connect(object->Client, &connect_options);
 	printf("is connected %d \n", rc);
 
 	//if (rc = MQTTClient_connect(object->MQTTClient, &connect_options) != MQTTCLIENT_SUCCESS) {
@@ -191,21 +189,6 @@ void bind_socket(SOCKET* server_socket)
 	server_addr.sin_addr.S_un.S_addr = INADDR_ANY;
 
 	bind(*server_socket, (struct sockaddr*)&server_addr, sizeof(server_addr));
-}
-
-uBuffer* allocate_ubuffer(int size)
-{
-	uBuffer* buffer = malloc(sizeof(Buffer));
-	if (!buffer) return NULL;
-
-	buffer->data = malloc(size);
-	if (!buffer->data) {
-		free(buffer);
-		return NULL;
-	}
-
-	buffer->size = size;
-	return buffer;
 }
 
 char* http_request(const char* host, const char* path)
@@ -252,7 +235,7 @@ int main(int argc, char* argv[])
 	// First we just want to make sure we have OpenSSL installed as the app will not work without it
 	setup_openssl();
 
-	Object* object = malloc(sizeof(Object));
+	Object* object = malloc(sizeof(*object));
 	cJSON* json = 0;
 
 	char* json_file_content = load_file("src/json.json");
@@ -279,7 +262,7 @@ int main(int argc, char* argv[])
 	// Here we make the program loop and everytime we receive a request from the Server API we update the json file
 	while (true) {
 		
-		//http_request()
+		// http_request("/device_id", localhost);
 		
 		if (_kbhit()) {
 			char ch = _getch();
