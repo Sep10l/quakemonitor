@@ -80,3 +80,12 @@ void parse_json(const char* json_string, Object* object, cJSON* json)
 
 	
 }
+
+void update_json_file(const char* json_string)
+{
+	FILE* fp = fopen("json.json", "w");
+	if (fp == NULL) return;
+
+	fputs(json_string, fp);
+	fclose(fp);
+}

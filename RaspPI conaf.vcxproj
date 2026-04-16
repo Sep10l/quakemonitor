@@ -22,11 +22,13 @@
     <ClCompile Include="res\cJSON.c" />
     <ClCompile Include="src\jsonParser.c" />
     <ClCompile Include="src\main.c" />
+    <ClCompile Include="src\websocket.c" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="res\cJSON.h" />
     <ClInclude Include="src\jsonParser.h" />
     <ClInclude Include="src\main.h" />
+    <ClInclude Include="src\websocket.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="src\json.json" />

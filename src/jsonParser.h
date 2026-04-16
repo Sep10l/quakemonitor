@@ -1,5 +1,6 @@
 #include <stdlib.h>
 #include "../res/cJSON.h"
+#include "main.h"
 
 #include "MQTTClient.h"
 
@@ -17,10 +18,6 @@ const char* GetLastLogin();
 
 char* load_file(const char* filename);
 
-typedef struct {
-	JsonData data;
-	MQTTClient MQTTClient;
-} Object;
-
 void setJsonData(JsonData* jsondata, Object* object);
 void parse_json(const char* json_string, Object* object, cJSON* json);
+void update_json_file(const char* json_string);

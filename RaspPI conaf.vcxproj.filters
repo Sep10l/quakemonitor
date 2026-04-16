@@ -24,6 +24,9 @@
     <ClCompile Include="res\cJSON.c">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="src\websocket.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\jsonParser.h">
@@ -33,6 +36,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="src\main.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\websocket.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

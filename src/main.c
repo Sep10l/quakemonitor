@@ -4,12 +4,18 @@
 #include <stdlib.h>
 #include <string.h>
 #include <errno.h>
+#include <conio.h>
 
 #include "../res/cJSON.h"
 
 #include "MQTTClient.h"
+#include "websocket.h"
+
+#include <sys/types.h>
 
 //#include 
+
+#define ESC_KEY 27
 
 // For OpenSSL checking at the start of the program
 #ifdef _WIN32
@@ -18,6 +24,12 @@
 	#define access _access
 #else
 	#include <unistd.h>
+#endif
+
+#ifdef _WIN32
+#define close_socket(s) closesocket(s)
+#else
+#define close_socket(s) close(s)
 #endif
 
 const char* known_paths[] = {
@@ -169,6 +181,72 @@ void init_mqtt(Object* object, MQTTInitOptions* init_options, MQTTClient_connect
 	//}
 }
 
+void bind_socket(SOCKET* server_socket)
+{
+	struct sockaddr_in server_addr;
+	memset(&server_addr, 0, sizeof(server_addr));
+
+	server_addr.sin_family = AF_INET;
+	server_addr.sin_port = htons(8000); // Bind to port 8000 which is Alt HTTP port
+	server_addr.sin_addr.S_un.S_addr = INADDR_ANY;
+
+	bind(*server_socket, (struct sockaddr*)&server_addr, sizeof(server_addr));
+}
+
+uBuffer* allocate_ubuffer(int size)
+{
+	uBuffer* buffer = malloc(sizeof(Buffer));
+	if (!buffer) return NULL;
+
+	buffer->data = malloc(size);
+	if (!buffer->data) {
+		free(buffer);
+		return NULL;
+	}
+
+	buffer->size = size;
+	return buffer;
+}
+
+char* http_request(const char* host, const char* path)
+{
+	SOCKET sock = socket(AF_INET, SOCK_STREAM, 0);
+	if (sock < 0) return NULL;
+
+	struct sockaddr_in addr;
+	addr.sin_family = AF_INET;
+	addr.sin_port = htons(8000);
+	addr.sin_addr.S_un.S_addr = inet_addr(host);
+
+	if (connect(sock, (struct sockaddr*)&addr, sizeof(addr)) < 0) {
+		close_socket(sock);
+		return NULL;
+	}
+
+	char request[512];
+	snprintf(request, sizeof(request),
+		"GET %s HTTP/1.1\r\n"
+		"Host: %s\r\n"
+		"Connection: close\r\n"
+		"\r\n",
+		path, host
+	);
+
+	send(sock, request, strlen(request), 0);
+
+	char* response = malloc(8192); // allocate 8KB for the response
+	int total = 0, n;
+
+	while ((n = recv(sock, response + total, 8192 - total - 1, 0)) > 0) {
+		total += n;
+	}
+
+	response[total] = '\0';
+
+	close_socket(sock);
+	return response;
+}
+
 int main(int argc, char* argv[])
 {
 	// First we just want to make sure we have OpenSSL installed as the app will not work without it
@@ -198,9 +276,33 @@ int main(int argc, char* argv[])
 	//int rc;
 	init_mqtt(object, &init_options, &connect_options, &ssl_options);
 	
+	// Here we make the program loop and everytime we receive a request from the Server API we update the json file
+	while (true) {
+		
+		//http_request()
+		
+		if (_kbhit()) {
+			char ch = _getch();
+
+			if (ch == ESC_KEY) {
+				printf("Esc key pressed. Exiting...\n");
+				break;
+			}
+		}
+	}
+
 	// Free the memory on the heap
 	free(object);
 	cJSON_Delete(json);
 
 	return 0;
+
+	// TODO: Probably create a Python interface for quick setup. DASHBOARD WEB (harta + status cladiri)
+	// Add Database 
+	// Add Node.js API?
+	// Monitorizare (rules engine) [Nu stiu ce inseamna asta dar vad]
+
+	// total 800 cladiri: 
+	// hardware: 240 000 - 320 000 lei
+	// 48K-64K euro
 }
