@@ -116,7 +116,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>C:\Users\mihne\source\repos\RaspPI conaf\res\paho.mqtt.c\build\mqttpaho-c\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\mihne\source\repos\RaspPI conaf\res\curl-8.19.0\include;C:\Users\mihne\source\repos\RaspPI conaf\res\paho.mqtt.c\build\mqttpaho-c\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <LanguageStandard_C>stdc17</LanguageStandard_C>
       <WarningLevel>Level3</WarningLevel>
     </ClCompile>

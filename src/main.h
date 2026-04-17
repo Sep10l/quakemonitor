@@ -3,17 +3,16 @@
 
 #define _WINSOCK_DEPRECATED_NO_WARNINGS
 
+#include "object.h"
+#include "MQTTClient.h"
 #include <stdbool.h>
 #include "jsonParser.h"
 #include <winsock2.h>
-#include "MQTTClient.h"
-#include "object.h"
 
-typedef int socklen_t;
-const char* localhost = "127.0.0.1";
+//typedef struct Object Object;
+typedef void* MQTTClient;
 
-
-typedef struct {
+typedef struct MQTTInitOptions {
 	const char* serverURI;
 	const char* clientID;
 } MQTTInitOptions;
@@ -27,6 +26,8 @@ void setup_openssl();
 
 void bind_socket(SOCKET* server_socket);
 
+int init_winsock();
 char* http_request(const char* host, const char* path);
+size_t write_data(void* ptr, size_t size, size_t nmemb, void* stream);
 
 #endif

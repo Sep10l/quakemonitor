@@ -2,10 +2,14 @@
 #define OBJECT_H
 
 #include "jsonParser.h"
+#include <MQTTClient.h>
 
-typedef struct {
+typedef struct JsonData JsonData;
+typedef void* MQTTClient;
+
+typedef struct Object {
 	JsonData data;
-	MQTTClient Client;
+	MQTTClient MClient;
 } Object;
 
 #endif

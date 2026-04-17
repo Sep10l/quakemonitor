@@ -1,12 +1,13 @@
 #ifndef JSONPARSER_H
 #define JSONPARSER_H
 
+
 #include <stdlib.h>
-#include "object.h"
-#include "MQTTClient.h"
 #include "../res/cJSON.h"
 
-typedef struct {
+typedef struct Object Object;
+
+typedef struct JsonData {
 	char* device_id;
 	char* status;
 	int uptime;
@@ -21,7 +22,7 @@ const char* GetLastLogin();
 char* load_file(const char* filename);
 
 void setJsonData(JsonData* jsondata, Object* object);
-void parse_json(const char* json_string, Object* object, cJSON* json);
+void parse_json(const char* json_string, struct Object* object, cJSON* cjson);
 void update_json_file(const char* json_string);
 
 #endif

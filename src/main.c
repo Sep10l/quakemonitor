@@ -1,3 +1,4 @@
+#pragma comment(lib, "Ws2_32.lib")
 #include "main.h"
 
 #include <stdio.h>
@@ -11,9 +12,12 @@
 #include "websocket.h"
 
 #include <sys/types.h>
+#include <curl/curl.h>
 
 #define ESC_KEY 27
+typedef int socklen_t;
 
+typedef struct JsonData JsonData;
 
 // For OpenSSL checking at the start of the program
 #ifdef _WIN32
@@ -43,6 +47,8 @@ const char* known_paths[] = {
 		"/usr/local/ssl/bin/openssl"
 	#endif
 };
+
+static const char* localhost = "127.0.0.1";
 
 void setup_openssl()
 {
@@ -105,8 +111,12 @@ JsonData* checkValidJSON(JsonData* jsondata) {
 
 void create_object(Object* object, JsonData* jsondata)
 {
-	if (checkValidJSON(jsondata)) object->data = *jsondata;
-
+	if (checkValidJSON(jsondata)) {
+		object->data.device_id = jsondata->device_id;
+		object->data.last_seen = jsondata->last_seen;
+		object->data.status = jsondata->status;
+		object->data.uptime = jsondata->uptime;
+	}
 }
 
 bool printJSON(Object* object)
@@ -147,8 +157,8 @@ void init_mqtt(Object* object, MQTTInitOptions* init_options, MQTTClient_connect
 	init_options->serverURI = "ssl://quakemonitor-ed51e1cb.a03.euc1.aws.hivemq.cloud:8883";
 	init_options->clientID = "cladire_001";
 
-	MQTTClient_create(&object->Client, init_options->serverURI, init_options->clientID, MQTTCLIENT_PERSISTENCE_NONE, NULL);
-	int i = MQTTClient_setCallbacks(object->Client, NULL, NULL, messageArrived, NULL);
+	MQTTClient_create(&object->MClient, init_options->serverURI, init_options->clientID, MQTTCLIENT_PERSISTENCE_NONE, NULL);
+	int i = MQTTClient_setCallbacks(object->MClient, NULL, NULL, messageArrived, NULL);
 	printf("\ncallback: %d \n", i); // 0 signals a successful connection
 
 	ssl_options->enableServerCertAuth = 0;
@@ -169,7 +179,7 @@ void init_mqtt(Object* object, MQTTInitOptions* init_options, MQTTClient_connect
 	connect_options->password = "Admin1122";
 	connect_options->MQTTVersion = MQTTVERSION_3_1_1;
 
-	int j = MQTTClient_connect(object->Client, &connect_options);
+	int j = MQTTClient_connect(object->MClient, &connect_options);
 	printf("is connected %d \n", rc);
 
 	//if (rc = MQTTClient_connect(object->MQTTClient, &connect_options) != MQTTCLIENT_SUCCESS) {
@@ -189,6 +199,17 @@ void bind_socket(SOCKET* server_socket)
 	server_addr.sin_addr.S_un.S_addr = INADDR_ANY;
 
 	bind(*server_socket, (struct sockaddr*)&server_addr, sizeof(server_addr));
+}
+
+int init_winsock()
+{
+	WSADATA wsa;
+	int res = WSAStartup(MAKEWORD(2, 2), &wsa);
+	if (res != 0) {
+		printf("Winsock initialization failed. Error code: %d", WSAGetLastError());
+		return 0;
+	}
+	return 1;
 }
 
 char* http_request(const char* host, const char* path)
@@ -230,12 +251,18 @@ char* http_request(const char* host, const char* path)
 	return response;
 }
 
+size_t write_data(void* ptr, size_t size, size_t nmemb, void* stream)
+{
+	fwrite(ptr, size, nmemb, stdout);
+	return size * nmemb;
+}
+
 int main(int argc, char* argv[])
 {
 	// First we just want to make sure we have OpenSSL installed as the app will not work without it
 	setup_openssl();
 
-	Object* object = malloc(sizeof(*object));
+	struct Object* object = malloc(sizeof(struct Object));
 	cJSON* json = 0;
 
 	char* json_file_content = load_file("src/json.json");
@@ -258,6 +285,10 @@ int main(int argc, char* argv[])
 	MQTTClient_SSLOptions ssl_options = MQTTClient_SSLOptions_initializer;
 	//int rc;
 	init_mqtt(object, &init_options, &connect_options, &ssl_options);
+	if (!init_winsock()) {
+		return 1;
+	}
+	
 	
 	// Here we make the program loop and everytime we receive a request from the Server API we update the json file
 	while (true) {
@@ -268,7 +299,7 @@ int main(int argc, char* argv[])
 			char ch = _getch();
 
 			if (ch == ESC_KEY) {
-				printf("Esc key pressed. Exiting...\n");
+				printf("\n\nEsc key pressed. Exiting...\n");
 				break;
 			}
 		}
