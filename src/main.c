@@ -7,12 +7,9 @@
 #include <errno.h>
 #include <conio.h>
 
-#include "../res/cJSON.h"
-
-#include "websocket.h"
+#include "../res/cJSON/cJSON.h"
 
 #include <sys/types.h>
-#include <curl/curl.h>
 
 #define ESC_KEY 27
 typedef int socklen_t;
@@ -84,6 +81,37 @@ void setup_openssl()
 	else {
 		printf("OpenSSL found.\n\n");
 	}
+}
+
+void* get(Array* a, int index)
+{
+	return (char*)a->data + index * a->elem_size;
+}
+
+void push_back(Array* a, void* element)
+{
+	if (a->size == a->capacity) {
+		a->capacity *= 2;
+		a->data = realloc(a->data, a->capacity * a->elem_size);
+	}
+
+	void* target = (char*)a->data + a->size * a->elem_size;
+	memcpy(target, element, a->elem_size);
+
+	a->size++;
+}
+
+void init_array(Array* a, size_t elem_size)
+{
+	a->size = 0;
+	a->capacity = 2;
+	a->elem_size = elem_size;
+	a->data = malloc(a->capacity * elem_size);
+}
+
+Object* getObject(Array* a)
+{
+	return object;
 }
 
 JsonData* checkValidJSON(JsonData* jsondata) {
@@ -172,14 +200,14 @@ void init_mqtt(Object* object, MQTTInitOptions* init_options, MQTTClient_connect
 	ssl_options->privateKeyPassword = NULL;
 	ssl_options->enabledCipherSuites = NULL;
 
-	connect_options->ssl = &ssl_options;
+	connect_options->ssl = ssl_options;
 	connect_options->keepAliveInterval = 10;
 	connect_options->cleansession = 1;
 	connect_options->username = "cladire_001";
 	connect_options->password = "Admin1122";
 	connect_options->MQTTVersion = MQTTVERSION_3_1_1;
 
-	int j = MQTTClient_connect(object->MClient, &connect_options);
+	int j = MQTTClient_connect(object->MClient, connect_options);
 	printf("is connected %d \n", rc);
 
 	//if (rc = MQTTClient_connect(object->MQTTClient, &connect_options) != MQTTCLIENT_SUCCESS) {
@@ -212,58 +240,53 @@ int init_winsock()
 	return 1;
 }
 
-char* http_request(const char* host, const char* path)
-{
-	SOCKET sock = socket(AF_INET, SOCK_STREAM, 0);
-	if (sock < 0) return NULL;
-
-	struct sockaddr_in addr;
-	addr.sin_family = AF_INET;
-	addr.sin_port = htons(8000);
-	addr.sin_addr.S_un.S_addr = inet_addr(host);
-
-	if (connect(sock, (struct sockaddr*)&addr, sizeof(addr)) < 0) {
-		close_socket(sock);
-		return NULL;
-	}
-
-	char request[512];
-	snprintf(request, sizeof(request),
-		"GET %s HTTP/1.1\r\n"
-		"Host: %s\r\n"
-		"Connection: close\r\n"
-		"\r\n",
-		path, host
-	);
-
-	send(sock, request, strlen(request), 0);
-
-	char* response = malloc(8192); // allocate 8KB for the response
-	int total = 0, n;
-
-	while ((n = recv(sock, response + total, 8192 - total - 1, 0)) > 0) {
-		total += n;
-	}
-
-	response[total] = '\0';
-
-	close_socket(sock);
-	return response;
-}
-
 size_t write_data(void* ptr, size_t size, size_t nmemb, void* stream)
 {
 	fwrite(ptr, size, nmemb, stdout);
 	return size * nmemb;
 }
 
-int main(int argc, char* argv[])
+void init_curl(CURL* curl)
+{
+	curl_easy_setopt(curl, CURLOPT_URL, "https://127.0.0.1");
+	curl_easy_setopt(curl, CURLOPT_WRITEFUNCTION, write_data);
+	curl_easy_perform(curl);
+}
+
+void cleanup_curl(CURL* curl)
+{
+	curl_easy_cleanup(curl);
+}
+
+// make sure curl is a valid handle
+CURLcode HTTP_post_request(CURL* curl, const char* url, const char* body)
+{
+	curl_easy_setopt(curl, CURLOPT_URL, url);
+	curl_easy_setopt(curl, CURLOPT_POST, 1L);
+	curl_easy_setopt(curl, CURLOPT_POSTFIELDS, body);
+
+	return curl_easy_perform(curl);
+}
+
+// make sure curl is a valid handle
+CURLcode HTTP_put_request(CURL* curl, const char* url, const char* body)
+{
+	curl_easy_setopt(curl, CURLOPT_URL, url);
+	curl_easy_setopt(curl, CURLOPT_CUSTOMREQUEST, "PUT");
+	curl_easy_setopt(curl, CURLOPT_POSTFIELDS, body);
+
+	return curl_easy_perform(curl);
+}
+
+int quakemonitor_run()
 {
 	// First we just want to make sure we have OpenSSL installed as the app will not work without it
 	setup_openssl();
 
-	struct Object* object = malloc(sizeof(struct Object));
-	cJSON* json = 0;
+	object = malloc(sizeof(struct Object));
+	init_object(object, sizeof(Object));
+
+	json = 0;
 
 	char* json_file_content = load_file("src/json.json");
 
@@ -288,26 +311,9 @@ int main(int argc, char* argv[])
 	if (!init_winsock()) {
 		return 1;
 	}
-	
-	
-	// Here we make the program loop and everytime we receive a request from the Server API we update the json file
-	while (true) {
-		
-		// http_request("/device_id", localhost);
-		
-		if (_kbhit()) {
-			char ch = _getch();
 
-			if (ch == ESC_KEY) {
-				printf("\n\nEsc key pressed. Exiting...\n");
-				break;
-			}
-		}
-	}
-
-	// Free the memory on the heap
-	free(object);
-	cJSON_Delete(json);
+	curl = curl_easy_init();
+	init_curl(curl);
 
 	return 0;
 
@@ -319,4 +325,38 @@ int main(int argc, char* argv[])
 	// total 800 cladiri: 
 	// hardware: 240 000 - 320 000 lei
 	// 48K-64K euro
+}
+
+int quakemonitor_update()
+{
+	return 0;
+}
+
+void quakemonitor_cleanup()
+{
+	if (curl) {
+		curl_easy_cleanup(curl);
+	}
+
+	if (object) {
+		free(object);
+	}
+
+	if (json) {
+		cJSON_Delete(json);
+	}
+}
+
+// make sure curl is a valid handle
+CURLcode HTTP_get_request(CURL* curl, const char* url)
+{
+	curl_easy_setopt(curl, CURLOPT_URL, url);
+	curl_easy_setopt(curl, CURLOPT_HTTPGET, 1L);
+	
+	return curl_easy_perform(curl);
+}
+
+int main(int argc, char* argv[])
+{
+	return quakemonitor_run();
 }

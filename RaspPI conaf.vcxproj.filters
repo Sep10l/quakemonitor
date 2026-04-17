@@ -21,10 +21,10 @@
     <ClCompile Include="src\main.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="res\cJSON.c">
+    <ClCompile Include="src\object.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\object.c">
+    <ClCompile Include="res\cJSON\cJSON.c">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

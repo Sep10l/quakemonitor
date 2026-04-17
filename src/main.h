@@ -7,6 +7,7 @@
 #include "MQTTClient.h"
 #include <stdbool.h>
 #include "jsonParser.h"
+#include <curl/curl.h>
 #include <winsock2.h>
 
 //typedef struct Object Object;
@@ -16,6 +17,20 @@ typedef struct MQTTInitOptions {
 	const char* serverURI;
 	const char* clientID;
 } MQTTInitOptions;
+
+typedef struct Array {
+	void* data;
+	int size;
+	int capacity;
+	size_t elem_size;
+} Array;
+
+Array arr;
+
+void* get(Array* a, int index);
+void push_back(Array* a, void* element);
+void init_array(Array* a, size_t elem_size);
+Object* getObject(Array* a);
 
 JsonData* checkValidJSON(JsonData* jsondata);
 void create_object(Object* object, JsonData* jsondata);
@@ -27,7 +42,21 @@ void setup_openssl();
 void bind_socket(SOCKET* server_socket);
 
 int init_winsock();
-char* http_request(const char* host, const char* path);
 size_t write_data(void* ptr, size_t size, size_t nmemb, void* stream);
+void init_curl(CURL* curl);
+void cleanup_curl(CURL* curl);
+
+CURLcode HTTP_get_request(CURL* curl, const char* url);
+CURLcode HTTP_post_request(CURL* curl, const char* url, const char* body);
+CURLcode HTTP_put_request(CURL* curl, const char* url, const char* body);
+
+int quakemonitor_run();
+int quakemonitor_update();
+void quakemonitor_cleanup();
+
+
+static struct Object* object;
+static cJSON* json = NULL;
+static CURL* curl = NULL;
 
 #endif

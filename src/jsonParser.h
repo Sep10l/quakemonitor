@@ -3,7 +3,7 @@
 
 
 #include <stdlib.h>
-#include "../res/cJSON.h"
+#include "../res/cJSON/cJSON.h"
 
 typedef struct Object Object;
 
