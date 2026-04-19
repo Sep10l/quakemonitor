@@ -21,14 +21,14 @@
   <ItemGroup>
     <ClCompile Include="res\cJSON\cJSON.c" />
     <ClCompile Include="src\jsonParser.c" />
-    <ClCompile Include="src\main.c" />
     <ClCompile Include="src\object.c" />
+    <ClCompile Include="src\run.c" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="res\cJSON.h" />
     <ClInclude Include="src\jsonParser.h" />
-    <ClInclude Include="src\main.h" />
     <ClInclude Include="src\object.h" />
+    <ClInclude Include="src\run.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="src\json.json" />
@@ -116,14 +116,14 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>C:\Users\mihne\source\repos\RaspPI conaf\res\curl\include;C:\Users\mihne\source\repos\RaspPI conaf\res\pahomqttc\build\mqttpaho-c\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\mihne\source\repos\RaspPIconaf\res\curl\include;C:\Users\mihne\source\repos\RaspPIconaf\res\pahomqttc\build\mqttpaho-c\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <LanguageStandard_C>stdc17</LanguageStandard_C>
       <WarningLevel>Level3</WarningLevel>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>C:\Users\mihne\source\repos\RaspPI conaf\res\curl\lib;C:\Users\mihne\source\repos\RaspPI conaf\res\pahomqttc\build\mqttpaho-c\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>C:\Users\mihne\source\repos\RaspPIconaf\res\curl\lib;C:\Users\mihne\source\repos\RaspPIconaf\res\pahomqttc\build\mqttpaho-c\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalDependencies>paho-mqtt3as.lib;paho-mqtt3cs.lib;ws2_32.lib;wldap32.lib;crypt32.lib;advapi32.lib;normaliz.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>

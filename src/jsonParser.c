@@ -56,7 +56,7 @@ void parse_json(const char* json_string, struct Object* object, cJSON* cjson)
 	if (cjson == NULL) {
 		const char* error_ptr = cJSON_GetErrorPtr();
 		if (error_ptr != NULL) {
-			fprintf(stderr, "Error before: %s\n", error_ptr);
+			// fprintf(stderr, "Error before: %s\n", error_ptr);
 		}
 		return;
 	}

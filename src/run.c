@@ -1,10 +1,8 @@
-#pragma comment(lib, "Ws2_32.lib")
-#include "main.h"
+#include "run.h"
 
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include <errno.h>
 #include <conio.h>
 
 #include "../res/cJSON/cJSON.h"
@@ -63,7 +61,7 @@ void setup_openssl()
 		int num_paths = sizeof(known_paths) / sizeof(known_paths[0]);
 		for (int i = 0; i < num_paths; i++) {
 			if (access(known_paths[i], F_OK) == 0) {
-				printf("found OpenSSL at: %s\n", known_paths[i]);
+				// printf("found OpenSSL at: %s\n", known_paths[i]);
 				found = 1;
 				break;
 			}
@@ -71,7 +69,7 @@ void setup_openssl()
 	}
 
 	if (!found) {
-		printf("OpenSSL not found. Running installer...\n");
+		// printf("OpenSSL not found. Running installer...\n");
 		#ifdef _WIN32
 			system("winget install openssl");
 		#else
@@ -79,7 +77,7 @@ void setup_openssl()
 		#endif
 	}
 	else {
-		printf("OpenSSL found.\n\n");
+		// printf("OpenSSL found.\n\n");
 	}
 }
 
@@ -109,27 +107,27 @@ void init_array(Array* a, size_t elem_size)
 	a->data = malloc(a->capacity * elem_size);
 }
 
-Object* getObject(Array* a)
+Object* getObject()
 {
 	return object;
 }
 
 JsonData* checkValidJSON(JsonData* jsondata) {
 	if (!jsondata) {
-		printf("Invalid JsonData object");
+		// perror("Invalid JsonData object");
 		return NULL; // basically invalid
 	}
 
 	if (!jsondata->device_id) {
-		printf("JSON_ERROR: pointer to char 'device_id' is null");
+		// perror("JSON_ERROR: pointer to char 'device_id' is null");
 		return NULL;
 	}
 	else if (!jsondata->last_seen) {
-		perror("JSON_ERROR: pointer to char 'last_seen' is null");
+		// perror("JSON_ERROR: pointer to char 'last_seen' is null");
 		return NULL;
 	}
 	else if (!jsondata->status) {
-		perror("JSON_ERROR: pointer to char 'status' is null");
+		// perror("JSON_ERROR: pointer to char 'status' is null");
 	}
 
 	// don't need to check for uptime as it is allowed to be zero
@@ -150,10 +148,10 @@ void create_object(Object* object, JsonData* jsondata)
 bool printJSON(Object* object)
 {
 	if (object) {
-		printf("device_id: \%s\n", object->data.device_id);
-		printf("status: \%s\n", object->data.status);
-		printf("uptime: %d\n", object->data.uptime);
-		printf("%s\n", object->data.last_seen);
+		//printf("device_id: \%s\n", object->data.device_id);
+		//printf("status: \%s\n", object->data.status);
+		//printf("uptime: %d\n", object->data.uptime);
+		//printf("%s\n", object->data.last_seen);
 		return true;
 	}
 
@@ -162,7 +160,7 @@ bool printJSON(Object* object)
 
 int messageArrived(void* context, char* topicName, int topicLen, MQTTClient_message* message)
 {
-	printf("Message arrived %s \n", (char*)message->payload);
+	// printf("Message arrived %s \n", (char*)message->payload);
 	return 1;
 }
 
@@ -173,12 +171,12 @@ void init_mqtt(Object* object, MQTTInitOptions* init_options, MQTTClient_connect
 	int retained = 0;
 	if (!init_options)
 	{
-		printf("MQTT initialization options returned null");
+		//printf("MQTT initialization options returned null");
 		exit(EXIT_FAILURE);
 	}
 	if (!connect_options)
 	{
-		printf("MQTT connect options pointer returned null");
+		//printf("MQTT connect options pointer returned null");
 		exit(EXIT_FAILURE);
 	}
 	
@@ -187,7 +185,7 @@ void init_mqtt(Object* object, MQTTInitOptions* init_options, MQTTClient_connect
 
 	MQTTClient_create(&object->MClient, init_options->serverURI, init_options->clientID, MQTTCLIENT_PERSISTENCE_NONE, NULL);
 	int i = MQTTClient_setCallbacks(object->MClient, NULL, NULL, messageArrived, NULL);
-	printf("\ncallback: %d \n", i); // 0 signals a successful connection
+	//printf("\ncallback: %d \n", i); // 0 signals a successful connection
 
 	ssl_options->enableServerCertAuth = 0;
 
@@ -208,7 +206,7 @@ void init_mqtt(Object* object, MQTTInitOptions* init_options, MQTTClient_connect
 	connect_options->MQTTVersion = MQTTVERSION_3_1_1;
 
 	int j = MQTTClient_connect(object->MClient, connect_options);
-	printf("is connected %d \n", rc);
+	//printf("is connected %d \n", rc);
 
 	//if (rc = MQTTClient_connect(object->MQTTClient, &connect_options) != MQTTCLIENT_SUCCESS) {
 	//	/*printf("\nMQTT connection failed.\n");
@@ -234,7 +232,7 @@ int init_winsock()
 	WSADATA wsa;
 	int res = WSAStartup(MAKEWORD(2, 2), &wsa);
 	if (res != 0) {
-		printf("Winsock initialization failed. Error code: %d", WSAGetLastError());
+		//printf("Winsock initialization failed. Error code: %d", WSAGetLastError());
 		return 0;
 	}
 	return 1;
@@ -288,7 +286,7 @@ int quakemonitor_run()
 
 	json = 0;
 
-	char* json_file_content = load_file("src/json.json");
+        char* json_file_content = load_file("json.json");
 
 	if (json_file_content != NULL) {
 		parse_json(json_file_content, object, json);
@@ -297,11 +295,11 @@ int quakemonitor_run()
 		free(json_file_content);
 	}
 	else {
-		printf("Json file content is null, returning\n");
+		//printf("Json file content is null, returning\n");
 		return 1;
 	}
 
-	if (printJSON(object) == false) printf("Something went wrong when printing JSON\n");
+	// if (printJSON(object) == false) printf("Something went wrong when printing JSON\n");
 
 	MQTTInitOptions init_options;
 	MQTTClient_connectOptions connect_options = MQTTClient_connectOptions_initializer;
@@ -356,7 +354,7 @@ CURLcode HTTP_get_request(CURL* curl, const char* url)
 	return curl_easy_perform(curl);
 }
 
-int main(int argc, char* argv[])
+int run_app()
 {
 	return quakemonitor_run();
 }

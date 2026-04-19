@@ -18,13 +18,13 @@
     <ClCompile Include="src\jsonParser.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\main.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="src\object.c">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="res\cJSON\cJSON.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\run.c">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -35,10 +35,10 @@
     <ClInclude Include="res\cJSON.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\main.h">
+    <ClInclude Include="src\object.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\object.h">
+    <ClInclude Include="src\run.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
