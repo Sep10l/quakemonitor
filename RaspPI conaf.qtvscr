@@ -1,0 +1,462 @@
+<FlowDocument xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" FontFamily="Segoe UI" FontSize="12">
+  <FlowDocument.Tag><![CDATA[{
+  "timestamp": "2026-04-20 04:05:56",
+  "files": {
+    "C:\\Users\\mihne\\source\\repos\\RaspPIconaf\\RaspPI conaf.vcxproj": {
+      "before": "7Vlbb9s2FO7zgP2EAYbQIslDLCdOk66RVbR2F3hzkyBOmxcDAU3RNluJ1Egql6777zuUKEryrXbTJkORPAQ2eUieG7/v8Pj8tydPvFc3UVi7IkJSzlrOTr3h1AjDPKBs3HISNdp+4bzyf/3FOxX8I8Gq1iEjlITqHIkxUbLlvEloGDg12IXBt4lS8UvXlXhCIiTrEcWCSz5SdcwjNyBXJOQxEW4kh3qZu9toNB3YvVbzuopER4Inca2HhiRsOebANmcjOk4EUqCgzIRBfN5srctwmASk5XTIMBl/uaCsuZuvgDWVrfxUxnOrg1oV/eedhkiNuIj8dBPPtd8zCRjI/DFv+VeUOyMhQZJ8RT0j9RAKZt672d+7q+9gix/iuWWqrey3NZXzXJuhUwmbftXpFbZ5FNOQFHkoiBzgP/snx9n/OnZq7hJxKfDgo+TsFAlJxCrSfKgv5SqSImGF2CrGmMs0x5j6pGLGjOCUGStIGzNWkNRmWLGvm3HMWSkcuWJ17eTchplN4GYDRqnbChodhXyIwgJ/PrQNAHzIoNPfOag3PHdm2MDFX+T2mosgQxO90nPzISNhtjtKaOD/c9Ac7uyPGqPtvRfkYHsPYbKNyO/72yTAz1HzeeNFY2f3X4tB6RqzzRnn6hhFRMawyD9DMj7tYs7QyHOrU0Ye4C3g1zKD8xzkrE0NbdNSEb1NqkjhMnM9opgLVTNmtZynmx/ahjROkZpsDd5ZbmjHcd3QSj0G50sbGlhd7FsDrA2opoGWs/F0s4K8W1+ebubab220WhslBthwckqpLMnBrUoL57cx8V/HcUhxyjhT+JtOG9e9lyQ9pUeHAglKpK9EQjx3dtwsyBU85zyURPlXO3vNAh/zUSPcniCBsCKiD5LvGQVKhr0rowt9/+1uq3DT/TluBFfru3nuYsJDAi4YCxSdxIpG9HMaShOehdMP6njLuffn9J8nW4HK789tP0uudtcD6CowZ4srDPn2RhGmXxEAWApeD4YrgV7Tg1LZMjVUFvcB7UiQQfJqK3KM608IvEOcbyeHvB6b9QcAudCk2aFimq5KbFNPdK1m3FOiKHJDpZKbwFRr77OxZSmrxzEKgY86SKGcPyw9ruTauzhqig4eXWVfogsKjhSJHt202E15Rv18jsrvWQXX9NV/h3QTxF5a/YyEapeytJTNpEuwsV5lm6eafXuaASjKL5BgAMM93XTx0/9QbFYGs4IHRPudXntC8CdTIdmvVuBUEAA4TKTkotBd+hfd4+bu4WXn7Zv3R4eX7ZPj/knv7eGzzQXyW/qlMH8ne5Su0aHvghgm76DkNSpNj5pazZ222+tR9qnwQT8Z9m8lONyHDSSUhZ5bDNkjjwgj0F/Kqvludrx+ZpizF07nStgzs6dk4aAy590x6vm9SdtRG8XbJe85FDZXQrw87n8kDGtDUyltBeSLMXrulPVYlylBgexxLpa/feZM2EU2rbLC0361AotyI8uy48csyzL7B2ZZ6RWyBFls5NYN5IMBBWDc6yDrHaDQ9KugqoPWGU8f7u2XA43UchDRCSMDyROByQCgistBqYcCI9DPS0Q4oFmn+XCdhTGa8OhvpfAgbX4P9Gc9to3tds82l6kJ8LlsuoCAHmLjBI1JXyEWIBFctn2pArxz4Llzpuz9WxU5oA0xBTsPALuVkGYtmNs7hTSkw+8VTr1VOZSz6lVCOTtdhLIIeIfEhAXw24zuNKV5oxOoCb+y6OOKAZwNXMvdy+ZuOncdBig2n7G4jZX5jIIrFFPzhWnSDenndEVZ+fK5FbXLEzlauPfJhZUacjol16uAch77nzPhIwea6m4ZB67X11DZD5lFeV50K/K2se1smP71/DaFbcf7/wE=",
+      "after": "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"
+    }
+  }
+}]]></FlowDocument.Tag>
+  <Section Margin="0,24" TextAlignment="Center">
+    <Paragraph FontSize="24" FontWeight="Bold" Margin="12,0">
+      <LineBreak />
+      <Span Foreground="Gray">Qt Visual Studio Tools</Span>
+    </Paragraph>
+    <Paragraph FontSize="42" Margin="12,0" FontWeight="Bold">
+      <Span TextDecorations="Underline">Project Format Conversion</Span>
+    </Paragraph>
+    <Paragraph Margin="12,8" FontSize="18">
+      <Span>Report generated on 2026-04-20 04:05:56</Span>
+    </Paragraph>
+  </Section>
+  <Section>
+    <Paragraph FontSize="32" FontWeight="Bold" Margin="12,0">
+      <Span>Files</Span>
+    </Paragraph>
+    <Paragraph Margin="24,12,0,0">
+      <Span FontFamily="Consolas" FontSize="14" Background="WhiteSmoke"><![CDATA[C:\Users\mihne\source\repos\RaspPIconaf\RaspPI conaf.vcxproj]]></Span>
+      <LineBreak />
+      <Hyperlink NavigateUri="file://C:\Users\mihne\source\repos\RaspPIconaf\RaspPI conaf.vcxproj?before">[Before]</Hyperlink>
+      <Hyperlink NavigateUri="file://C:\Users\mihne\source\repos\RaspPIconaf\RaspPI conaf.vcxproj?after">[After]</Hyperlink>
+      <Hyperlink NavigateUri="file://C:\Users\mihne\source\repos\RaspPIconaf\RaspPI conaf.vcxproj?diff&amp;before&amp;after">
+                        [Diff before/after]
+                    </Hyperlink>
+      <Hyperlink NavigateUri="file://C:\Users\mihne\source\repos\RaspPIconaf\RaspPI conaf.vcxproj?diff&amp;before&amp;current">
+                        [Diff before/current]
+                    </Hyperlink>
+      <Hyperlink NavigateUri="file://C:\Users\mihne\source\repos\RaspPIconaf\RaspPI conaf.vcxproj?diff&amp;after&amp;current">
+                        [Diff after/current]
+                    </Hyperlink>
+      <LineBreak />
+    </Paragraph>
+  </Section>
+  <Section>
+    <Paragraph FontSize="32" FontWeight="Bold" Margin="12,0">
+      <Span>Changes</Span>
+    </Paragraph>
+    <Paragraph FontSize="20" FontWeight="Bold" Margin="12">
+      <Span><![CDATA[🡺 Converting custom build steps to Qt/MSBuild items]]></Span>
+    </Paragraph>
+    <Table CellSpacing="0" BorderBrush="Gray" BorderThickness="0.5">
+      <Table.Columns>
+        <TableColumn />
+        <TableColumn />
+      </Table.Columns>
+      <TableRowGroup>
+        <TableRow Background="Orange">
+          <TableCell ColumnSpan="2" BorderThickness="0.5" BorderBrush="Gray">
+            <Paragraph Margin="10,5" FontWeight="Bold">
+              <Span><![CDATA[C:\Users\mihne\source\repos\RaspPIconaf\RaspPI conaf.vcxproj]]></Span>
+            </Paragraph>
+          </TableCell>
+        </TableRow>
+        <TableRow>
+          <TableCell ColumnSpan="2" Background="WhiteSmoke" BorderBrush="Gray" BorderThickness="0.5" />
+        </TableRow>
+        <TableRow>
+          <TableCell BorderThickness="0, 0, 0.5, 0" BorderBrush="Gray">
+            <Paragraph FontFamily="Consolas" Margin="4, 0">
+              <Span><![CDATA[      ]]></Span><Span Background="LightCoral"><![CDATA[<AdditionalIncludeDirectories>C:\Users\mihne\source\repos\RaspPIconaf\res\curl\include]]></Span><Span><![CDATA[;C:\Users\mihne\source\repos\RaspPIconaf\res\pahomqttc\build\mqttpaho-c\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>]]></Span>
+            </Paragraph>
+          </TableCell>
+          <TableCell BorderThickness="0, 0, 0.5, 0" BorderBrush="Gray">
+            <Paragraph FontFamily="Consolas" Margin="4, 0">
+              <Span><![CDATA[      ]]></Span><Span Background="LightGreen"><![CDATA[<AdditionalIncludeDirectories>GeneratedFiles\$(ConfigurationName);GeneratedFiles;C:\Users\mihne\source\repos\RaspPIconaf\res\curl\include]]></Span><Span><![CDATA[;C:\Users\mihne\source\repos\RaspPIconaf\res\pahomqttc\build\mqttpaho-c\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>]]></Span>
+            </Paragraph>
+          </TableCell>
+        </TableRow>
+      </TableRowGroup>
+    </Table>
+    <Paragraph FontSize="20" FontWeight="Bold" Margin="12">
+      <Span><![CDATA[🡺 Enabling multi-processor compilation]]></Span>
+    </Paragraph>
+    <Table CellSpacing="0" BorderBrush="Gray" BorderThickness="0.5">
+      <Table.Columns>
+        <TableColumn />
+        <TableColumn />
+      </Table.Columns>
+      <TableRowGroup>
+        <TableRow Background="Orange">
+          <TableCell ColumnSpan="2" BorderThickness="0.5" BorderBrush="Gray">
+            <Paragraph Margin="10,5" FontWeight="Bold">
+              <Span><![CDATA[C:\Users\mihne\source\repos\RaspPIconaf\RaspPI conaf.vcxproj]]></Span>
+            </Paragraph>
+          </TableCell>
+        </TableRow>
+        <TableRow>
+          <TableCell ColumnSpan="2" Background="WhiteSmoke" BorderBrush="Gray" BorderThickness="0.5" />
+        </TableRow>
+        <TableRow>
+          <TableCell BorderThickness="0, 0, 0.5, 0" BorderBrush="Gray">
+            <Paragraph FontFamily="Consolas" Margin="4, 0" />
+          </TableCell>
+          <TableCell BorderThickness="0, 0, 0.5, 0" BorderBrush="Gray">
+            <Paragraph FontFamily="Consolas" Margin="4, 0">
+              <Span Background="LightGreen"><![CDATA[      <MultiProcessorCompilation>true</MultiProcessorCompilation>]]></Span>
+            </Paragraph>
+          </TableCell>
+        </TableRow>
+        <TableRow>
+          <TableCell ColumnSpan="2" Background="WhiteSmoke" BorderBrush="Gray" BorderThickness="0.5" />
+        </TableRow>
+        <TableRow>
+          <TableCell BorderThickness="0, 0, 0.5, 0" BorderBrush="Gray">
+            <Paragraph FontFamily="Consolas" Margin="4, 0" />
+          </TableCell>
+          <TableCell BorderThickness="0, 0, 0.5, 0" BorderBrush="Gray">
+            <Paragraph FontFamily="Consolas" Margin="4, 0">
+              <Span Background="LightGreen"><![CDATA[      <MultiProcessorCompilation>true</MultiProcessorCompilation>]]></Span>
+            </Paragraph>
+          </TableCell>
+        </TableRow>
+        <TableRow>
+          <TableCell ColumnSpan="2" Background="WhiteSmoke" BorderBrush="Gray" BorderThickness="0.5" />
+        </TableRow>
+        <TableRow>
+          <TableCell BorderThickness="0, 0, 0.5, 0" BorderBrush="Gray">
+            <Paragraph FontFamily="Consolas" Margin="4, 0" />
+          </TableCell>
+          <TableCell BorderThickness="0, 0, 0.5, 0" BorderBrush="Gray">
+            <Paragraph FontFamily="Consolas" Margin="4, 0">
+              <Span Background="LightGreen"><![CDATA[      <MultiProcessorCompilation>true</MultiProcessorCompilation>]]></Span>
+            </Paragraph>
+          </TableCell>
+        </TableRow>
+        <TableRow>
+          <TableCell ColumnSpan="2" Background="WhiteSmoke" BorderBrush="Gray" BorderThickness="0.5" />
+        </TableRow>
+        <TableRow>
+          <TableCell BorderThickness="0, 0, 0.5, 0" BorderBrush="Gray">
+            <Paragraph FontFamily="Consolas" Margin="4, 0" />
+          </TableCell>
+          <TableCell BorderThickness="0, 0, 0.5, 0" BorderBrush="Gray">
+            <Paragraph FontFamily="Consolas" Margin="4, 0">
+              <Span Background="LightGreen"><![CDATA[      <MultiProcessorCompilation>true</MultiProcessorCompilation>]]></Span>
+            </Paragraph>
+          </TableCell>
+        </TableRow>
+      </TableRowGroup>
+    </Table>
+    <Paragraph FontSize="20" FontWeight="Bold" Margin="12">
+      <Span><![CDATA[🡺 Project format version]]></Span>
+    </Paragraph>
+    <Table CellSpacing="0" BorderBrush="Gray" BorderThickness="0.5">
+      <Table.Columns>
+        <TableColumn />
+        <TableColumn />
+      </Table.Columns>
+      <TableRowGroup>
+        <TableRow Background="Orange">
+          <TableCell ColumnSpan="2" BorderThickness="0.5" BorderBrush="Gray">
+            <Paragraph Margin="10,5" FontWeight="Bold">
+              <Span><![CDATA[C:\Users\mihne\source\repos\RaspPIconaf\RaspPI conaf.vcxproj]]></Span>
+            </Paragraph>
+          </TableCell>
+        </TableRow>
+        <TableRow>
+          <TableCell ColumnSpan="2" Background="WhiteSmoke" BorderBrush="Gray" BorderThickness="0.5" />
+        </TableRow>
+        <TableRow>
+          <TableCell BorderThickness="0, 0, 0.5, 0" BorderBrush="Gray">
+            <Paragraph FontFamily="Consolas" Margin="4, 0" />
+          </TableCell>
+          <TableCell BorderThickness="0, 0, 0.5, 0" BorderBrush="Gray">
+            <Paragraph FontFamily="Consolas" Margin="4, 0">
+              <Span Background="LightGreen"><![CDATA[    <Keyword>QtVS_v304</Keyword>]]></Span>
+            </Paragraph>
+          </TableCell>
+        </TableRow>
+      </TableRowGroup>
+    </Table>
+    <Paragraph FontSize="20" FontWeight="Bold" Margin="12">
+      <Span><![CDATA[🡺 Fallback for QTMSBUILD environment variable]]></Span>
+    </Paragraph>
+    <Table CellSpacing="0" BorderBrush="Gray" BorderThickness="0.5">
+      <Table.Columns>
+        <TableColumn />
+        <TableColumn />
+      </Table.Columns>
+      <TableRowGroup>
+        <TableRow Background="Orange">
+          <TableCell ColumnSpan="2" BorderThickness="0.5" BorderBrush="Gray">
+            <Paragraph Margin="10,5" FontWeight="Bold">
+              <Span><![CDATA[C:\Users\mihne\source\repos\RaspPIconaf\RaspPI conaf.vcxproj]]></Span>
+            </Paragraph>
+          </TableCell>
+        </TableRow>
+        <TableRow>
+          <TableCell ColumnSpan="2" Background="WhiteSmoke" BorderBrush="Gray" BorderThickness="0.5" />
+        </TableRow>
+        <TableRow>
+          <TableCell BorderThickness="0, 0, 0.5, 0" BorderBrush="Gray">
+            <Paragraph FontFamily="Consolas" Margin="4, 0" />
+          </TableCell>
+          <TableCell BorderThickness="0, 0, 0.5, 0" BorderBrush="Gray">
+            <Paragraph FontFamily="Consolas" Margin="4, 0">
+              <Span Background="LightGreen"><![CDATA[    <QtMsBuild Condition="'$(QtMsBuild)'=='' OR !Exists('$(QtMsBuild)\qt.targets')">$(MSBuildProjectDirectory)\QtMsBuild</QtMsBuild>]]></Span>
+            </Paragraph>
+          </TableCell>
+        </TableRow>
+      </TableRowGroup>
+    </Table>
+    <Paragraph FontSize="20" FontWeight="Bold" Margin="12">
+      <Span><![CDATA[🡺 Default Qt properties]]></Span>
+    </Paragraph>
+    <Table CellSpacing="0" BorderBrush="Gray" BorderThickness="0.5">
+      <Table.Columns>
+        <TableColumn />
+        <TableColumn />
+      </Table.Columns>
+      <TableRowGroup>
+        <TableRow Background="Orange">
+          <TableCell ColumnSpan="2" BorderThickness="0.5" BorderBrush="Gray">
+            <Paragraph Margin="10,5" FontWeight="Bold">
+              <Span><![CDATA[C:\Users\mihne\source\repos\RaspPIconaf\RaspPI conaf.vcxproj]]></Span>
+            </Paragraph>
+          </TableCell>
+        </TableRow>
+        <TableRow>
+          <TableCell ColumnSpan="2" Background="WhiteSmoke" BorderBrush="Gray" BorderThickness="0.5" />
+        </TableRow>
+        <TableRow>
+          <TableCell BorderThickness="0, 0, 0.5, 0" BorderBrush="Gray">
+            <Paragraph FontFamily="Consolas" Margin="4, 0" />
+          </TableCell>
+          <TableCell BorderThickness="0, 0, 0.5, 0" BorderBrush="Gray">
+            <Paragraph FontFamily="Consolas" Margin="4, 0">
+              <Span Background="LightGreen"><![CDATA[  <Import Project="$(QtMsBuild)\qt_defaults.props" Condition="Exists('$(QtMsBuild)\qt_defaults.props')" />]]></Span>
+            </Paragraph>
+          </TableCell>
+        </TableRow>
+      </TableRowGroup>
+    </Table>
+    <Paragraph FontSize="20" FontWeight="Bold" Margin="12">
+      <Span><![CDATA[🡺 Qt build settings]]></Span>
+    </Paragraph>
+    <Table CellSpacing="0" BorderBrush="Gray" BorderThickness="0.5">
+      <Table.Columns>
+        <TableColumn />
+        <TableColumn />
+      </Table.Columns>
+      <TableRowGroup>
+        <TableRow Background="Orange">
+          <TableCell ColumnSpan="2" BorderThickness="0.5" BorderBrush="Gray">
+            <Paragraph Margin="10,5" FontWeight="Bold">
+              <Span><![CDATA[C:\Users\mihne\source\repos\RaspPIconaf\RaspPI conaf.vcxproj]]></Span>
+            </Paragraph>
+          </TableCell>
+        </TableRow>
+        <TableRow>
+          <TableCell ColumnSpan="2" Background="WhiteSmoke" BorderBrush="Gray" BorderThickness="0.5" />
+        </TableRow>
+        <TableRow>
+          <TableCell BorderThickness="0, 0, 0.5, 0" BorderBrush="Gray">
+            <Paragraph FontFamily="Consolas" Margin="4, 0" />
+          </TableCell>
+          <TableCell BorderThickness="0, 0, 0.5, 0" BorderBrush="Gray">
+            <Paragraph FontFamily="Consolas" Margin="4, 0">
+              <Span Background="LightGreen"><![CDATA[  <PropertyGroup Label="QtSettings" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" />]]></Span>
+            </Paragraph>
+          </TableCell>
+        </TableRow>
+        <TableRow>
+          <TableCell BorderThickness="0, 0, 0.5, 0" BorderBrush="Gray">
+            <Paragraph FontFamily="Consolas" Margin="4, 0" />
+          </TableCell>
+          <TableCell BorderThickness="0, 0, 0.5, 0" BorderBrush="Gray">
+            <Paragraph FontFamily="Consolas" Margin="4, 0">
+              <Span Background="LightGreen"><![CDATA[  <PropertyGroup Label="QtSettings" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" />]]></Span>
+            </Paragraph>
+          </TableCell>
+        </TableRow>
+        <TableRow>
+          <TableCell BorderThickness="0, 0, 0.5, 0" BorderBrush="Gray">
+            <Paragraph FontFamily="Consolas" Margin="4, 0" />
+          </TableCell>
+          <TableCell BorderThickness="0, 0, 0.5, 0" BorderBrush="Gray">
+            <Paragraph FontFamily="Consolas" Margin="4, 0">
+              <Span Background="LightGreen"><![CDATA[  <PropertyGroup Label="QtSettings" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" />]]></Span>
+            </Paragraph>
+          </TableCell>
+        </TableRow>
+        <TableRow>
+          <TableCell BorderThickness="0, 0, 0.5, 0" BorderBrush="Gray">
+            <Paragraph FontFamily="Consolas" Margin="4, 0" />
+          </TableCell>
+          <TableCell BorderThickness="0, 0, 0.5, 0" BorderBrush="Gray">
+            <Paragraph FontFamily="Consolas" Margin="4, 0">
+              <Span Background="LightGreen"><![CDATA[  <PropertyGroup Label="QtSettings" Condition="'$(Configuration)|$(Platform)'=='Release|x64'" />]]></Span>
+            </Paragraph>
+          </TableCell>
+        </TableRow>
+      </TableRowGroup>
+    </Table>
+    <Paragraph FontSize="20" FontWeight="Bold" Margin="12">
+      <Span><![CDATA[🡺 Warn if Qt/MSBuild is not found]]></Span>
+    </Paragraph>
+    <Table CellSpacing="0" BorderBrush="Gray" BorderThickness="0.5">
+      <Table.Columns>
+        <TableColumn />
+        <TableColumn />
+      </Table.Columns>
+      <TableRowGroup>
+        <TableRow Background="Orange">
+          <TableCell ColumnSpan="2" BorderThickness="0.5" BorderBrush="Gray">
+            <Paragraph Margin="10,5" FontWeight="Bold">
+              <Span><![CDATA[C:\Users\mihne\source\repos\RaspPIconaf\RaspPI conaf.vcxproj]]></Span>
+            </Paragraph>
+          </TableCell>
+        </TableRow>
+        <TableRow>
+          <TableCell ColumnSpan="2" Background="WhiteSmoke" BorderBrush="Gray" BorderThickness="0.5" />
+        </TableRow>
+        <TableRow>
+          <TableCell BorderThickness="0, 0, 0.5, 0" BorderBrush="Gray">
+            <Paragraph FontFamily="Consolas" Margin="4, 0" />
+          </TableCell>
+          <TableCell BorderThickness="0, 0, 0.5, 0" BorderBrush="Gray">
+            <Paragraph FontFamily="Consolas" Margin="4, 0">
+              <Span Background="LightGreen"><![CDATA[  <Target Name="QtMsBuildNotFound" BeforeTargets="CustomBuild;ClCompile" Condition="!Exists('$(QtMsBuild)\qt.targets') OR !Exists('$(QtMsBuild)\Qt.props')">]]></Span>
+            </Paragraph>
+          </TableCell>
+        </TableRow>
+        <TableRow>
+          <TableCell BorderThickness="0, 0, 0.5, 0" BorderBrush="Gray">
+            <Paragraph FontFamily="Consolas" Margin="4, 0" />
+          </TableCell>
+          <TableCell BorderThickness="0, 0, 0.5, 0" BorderBrush="Gray">
+            <Paragraph FontFamily="Consolas" Margin="4, 0">
+              <Span Background="LightGreen"><![CDATA[    <Message Importance="High" Text="QtMsBuild: could not locate qt.targets, qt.props; project may not build correctly." />]]></Span>
+            </Paragraph>
+          </TableCell>
+        </TableRow>
+        <TableRow>
+          <TableCell BorderThickness="0, 0, 0.5, 0" BorderBrush="Gray">
+            <Paragraph FontFamily="Consolas" Margin="4, 0" />
+          </TableCell>
+          <TableCell BorderThickness="0, 0, 0.5, 0" BorderBrush="Gray">
+            <Paragraph FontFamily="Consolas" Margin="4, 0">
+              <Span Background="LightGreen"><![CDATA[  </Target>]]></Span>
+            </Paragraph>
+          </TableCell>
+        </TableRow>
+      </TableRowGroup>
+    </Table>
+    <Paragraph FontSize="20" FontWeight="Bold" Margin="12">
+      <Span><![CDATA[🡺 Qt property sheet]]></Span>
+    </Paragraph>
+    <Table CellSpacing="0" BorderBrush="Gray" BorderThickness="0.5">
+      <Table.Columns>
+        <TableColumn />
+        <TableColumn />
+      </Table.Columns>
+      <TableRowGroup>
+        <TableRow Background="Orange">
+          <TableCell ColumnSpan="2" BorderThickness="0.5" BorderBrush="Gray">
+            <Paragraph Margin="10,5" FontWeight="Bold">
+              <Span><![CDATA[C:\Users\mihne\source\repos\RaspPIconaf\RaspPI conaf.vcxproj]]></Span>
+            </Paragraph>
+          </TableCell>
+        </TableRow>
+        <TableRow>
+          <TableCell ColumnSpan="2" Background="WhiteSmoke" BorderBrush="Gray" BorderThickness="0.5" />
+        </TableRow>
+        <TableRow>
+          <TableCell BorderThickness="0, 0, 0.5, 0" BorderBrush="Gray">
+            <Paragraph FontFamily="Consolas" Margin="4, 0" />
+          </TableCell>
+          <TableCell BorderThickness="0, 0, 0.5, 0" BorderBrush="Gray">
+            <Paragraph FontFamily="Consolas" Margin="4, 0">
+              <Span Background="LightGreen"><![CDATA[    <Import Project="$(QtMsBuild)\Qt.props" />]]></Span>
+            </Paragraph>
+          </TableCell>
+        </TableRow>
+        <TableRow>
+          <TableCell ColumnSpan="2" Background="WhiteSmoke" BorderBrush="Gray" BorderThickness="0.5" />
+        </TableRow>
+        <TableRow>
+          <TableCell BorderThickness="0, 0, 0.5, 0" BorderBrush="Gray">
+            <Paragraph FontFamily="Consolas" Margin="4, 0" />
+          </TableCell>
+          <TableCell BorderThickness="0, 0, 0.5, 0" BorderBrush="Gray">
+            <Paragraph FontFamily="Consolas" Margin="4, 0">
+              <Span Background="LightGreen"><![CDATA[    <Import Project="$(QtMsBuild)\Qt.props" />]]></Span>
+            </Paragraph>
+          </TableCell>
+        </TableRow>
+        <TableRow>
+          <TableCell ColumnSpan="2" Background="WhiteSmoke" BorderBrush="Gray" BorderThickness="0.5" />
+        </TableRow>
+        <TableRow>
+          <TableCell BorderThickness="0, 0, 0.5, 0" BorderBrush="Gray">
+            <Paragraph FontFamily="Consolas" Margin="4, 0" />
+          </TableCell>
+          <TableCell BorderThickness="0, 0, 0.5, 0" BorderBrush="Gray">
+            <Paragraph FontFamily="Consolas" Margin="4, 0">
+              <Span Background="LightGreen"><![CDATA[    <Import Project="$(QtMsBuild)\Qt.props" />]]></Span>
+            </Paragraph>
+          </TableCell>
+        </TableRow>
+        <TableRow>
+          <TableCell ColumnSpan="2" Background="WhiteSmoke" BorderBrush="Gray" BorderThickness="0.5" />
+        </TableRow>
+        <TableRow>
+          <TableCell BorderThickness="0, 0, 0.5, 0" BorderBrush="Gray">
+            <Paragraph FontFamily="Consolas" Margin="4, 0" />
+          </TableCell>
+          <TableCell BorderThickness="0, 0, 0.5, 0" BorderBrush="Gray">
+            <Paragraph FontFamily="Consolas" Margin="4, 0">
+              <Span Background="LightGreen"><![CDATA[    <Import Project="$(QtMsBuild)\Qt.props" />]]></Span>
+            </Paragraph>
+          </TableCell>
+        </TableRow>
+      </TableRowGroup>
+    </Table>
+    <Paragraph FontSize="20" FontWeight="Bold" Margin="12">
+      <Span><![CDATA[🡺 Qt targets]]></Span>
+    </Paragraph>
+    <Table CellSpacing="0" BorderBrush="Gray" BorderThickness="0.5">
+      <Table.Columns>
+        <TableColumn />
+        <TableColumn />
+      </Table.Columns>
+      <TableRowGroup>
+        <TableRow Background="Orange">
+          <TableCell ColumnSpan="2" BorderThickness="0.5" BorderBrush="Gray">
+            <Paragraph Margin="10,5" FontWeight="Bold">
+              <Span><![CDATA[C:\Users\mihne\source\repos\RaspPIconaf\RaspPI conaf.vcxproj]]></Span>
+            </Paragraph>
+          </TableCell>
+        </TableRow>
+        <TableRow>
+          <TableCell ColumnSpan="2" Background="WhiteSmoke" BorderBrush="Gray" BorderThickness="0.5" />
+        </TableRow>
+        <TableRow>
+          <TableCell BorderThickness="0, 0, 0.5, 0" BorderBrush="Gray">
+            <Paragraph FontFamily="Consolas" Margin="4, 0" />
+          </TableCell>
+          <TableCell BorderThickness="0, 0, 0.5, 0" BorderBrush="Gray">
+            <Paragraph FontFamily="Consolas" Margin="4, 0">
+              <Span Background="LightGreen"><![CDATA[  <Import Project="$(QtMsBuild)\qt.targets" Condition="Exists('$(QtMsBuild)\qt.targets')" />]]></Span>
+            </Paragraph>
+          </TableCell>
+        </TableRow>
+      </TableRowGroup>
+    </Table>
+  </Section>
+  <Section>
+    <Paragraph />
+  </Section>
+</FlowDocument>
+<!--gjeO/zNNyZsbR1AQgyaGVEPh4h8hkCGWLl10P1UdQwI=-->
