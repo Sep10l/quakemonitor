@@ -10,14 +10,14 @@ SOURCES += \
     ../../source/repos/RaspPIconaf/src/jsonParser.c \
     ../../source/repos/RaspPIconaf/src/run.c \
     ../../source/repos/RaspPIconaf/src/object.c \
-    main.cpp \
-    mainwindow.cpp
+    src/Qt/main.cpp \
+    src/Qt/mainwindow.cpp
 
 HEADERS += \
     ../../source/repos/RaspPIconaf/src/jsonParser.h \
     ../../source/repos/RaspPIconaf/src/run.h \
     ../../source/repos/RaspPIconaf/src/object.h \
-    mainwindow.h
+    src/Qt/mainwindow.h
 
 FORMS += \
     mainwindow.ui
